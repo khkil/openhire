@@ -13,7 +13,7 @@ class SecurityConfig {
     protected fun config(http: HttpSecurity): SecurityFilterChain {
         http
             .csrf { csrf: CsrfConfigurer<HttpSecurity> -> csrf.disable() }
-            .cors { cors: CorsConfigurer<HttpSecurity?> -> cors.disable() }
+            .cors { cors: CorsConfigurer<HttpSecurity> -> cors.disable() }
             .sessionManagement { sessionManagement: SessionManagementConfigurer<HttpSecurity?> ->
                 sessionManagement.sessionCreationPolicy(
                     SessionCreationPolicy.STATELESS

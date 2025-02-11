@@ -14,7 +14,7 @@ Openhire 아이디에이션
 
 # 1. 배치
 ## 1.1. 사업장 목록 배치
-- 공공데이터 포털 기반 엑셀데이터 - [**국민여금 가입 사업장 내역**](https://www.data.go.kr/tcs/dss/selectFileDataDetailView.do?publicDataPk=15083277) 
+- 공공데이터 포털 기반 엑셀데이터 - [**국민연금 가입 사업장 내역**](https://www.data.go.kr/tcs/dss/selectFileDataDetailView.do?publicDataPk=15083277) 
 - monthly로 데이터 갱신 배치 구현
 ## 1.2. 사업장 별 채용건
 - 각 구직 사이트별 채용건 검색 후 배치 처리

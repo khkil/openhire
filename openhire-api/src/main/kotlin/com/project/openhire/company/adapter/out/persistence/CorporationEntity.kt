@@ -1,11 +1,13 @@
 package com.project.openhire.company.adapter.out.persistence
 
 import jakarta.persistence.*
+import lombok.Getter
 import java.time.LocalDateTime
 
 
 @Entity
 @Table(name = "CORPORATION")
+@Getter
 class CorporationEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
