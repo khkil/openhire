@@ -1,33 +1,32 @@
 package com.project.openhire.company.adapter.out.persistence
 
 import jakarta.persistence.*
-import lombok.Getter
+import java.time.LocalDate
 import java.time.LocalDateTime
-
 
 @Entity
 @Table(name = "CORPORATION")
-@Getter
-class CorporationEntity {
+class CorporationEntity(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false)
-    val id: Long? = null
+    val id: Long? = null,
 
-    val corporationName: String? = null
+    val corporationName: String,
 
-    val businessNo: String? = null
+    val businessNo: Int,
 
-    val provinceCode: Int? = null
+    val provinceCode: Int,
 
-    val cityDistrictCode: Int? = null
+    val cityDistrictCode: Int,
 
-    val townCode: Int? = null
+    val townCode: Int,
 
-    val basedAt: LocalDateTime? = null
+    val basedAt: LocalDate,
 
-    val createAt: LocalDateTime = LocalDateTime.now()
+    val createAt: LocalDateTime,
 
     @ManyToOne
-    val businessCategory: BusinessCategoryEntity = BusinessCategoryEntity()
-}
+    @JoinColumn(name = "category_id")
+    val businessCategory: BusinessCategoryEntity? = null,
+)

@@ -5,15 +5,17 @@ import jakarta.persistence.*
 
 @Entity
 @Table(name = "BUSINESS_CATEGORY")
-class BusinessCategoryEntity {
+class BusinessCategoryEntity(
     @Id
-    val id: Long? = null
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    val id: Long? = null,
 
-    @Column
-    val categoryCode: Int? = null
+    @Column(unique = true, nullable = false)
+    val categoryCode: Int,
 
-    val categoryName: String? = null
+    @Column(unique = true, nullable = false)
+    val categoryName: String,
 
     @OneToMany(mappedBy = "businessCategory")
-    val corporations: List<CorporationEntity> = ArrayList()
-}
+    val corporations: List<CorporationEntity>? = mutableListOf()
+)
